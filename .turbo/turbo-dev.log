@@ -1,0 +1,111 @@
+
+> @dashforge/frontend@1.0.0 dev
+> next dev -p 3001
+
+  ▲ Next.js 14.2.0
+  - Local:        http://localhost:3001
+
+ ✓ Starting...
+npm ERR! code ENOWORKSPACES
+npm ERR! This command does not support workspaces.
+
+npm ERR! A complete log of this run can be found in: /Users/alok.singh1166/.npm/_logs/2025-10-16T10_58_37_498Z-debug-0.log
+ ✓ Ready in 1639ms
+ ○ Compiling /login ...
+ ✓ Compiled /login in 2s (528 modules)
+ GET /login 200 in 2206ms
+ ✓ Compiled /_not-found in 230ms (508 modules)
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 133ms
+ GET /login 200 in 44ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 17ms
+ ✓ Compiled /dashboard in 258ms (571 modules)
+ ✓ Compiled /dashboard/apps in 166ms (593 modules)
+ ○ Compiling /dashboard/apps/[id] ...
+ ✓ Compiled /dashboard/apps/[id] in 1273ms (1673 modules)
+ ✓ Compiled /dashboard/apps/new in 216ms (1683 modules)
+ ✓ Compiled / in 247ms (1698 modules)
+ ✓ Compiled /register in 282ms (1698 modules)
+ ✓ Compiled /demo in 467ms (1712 modules)
+ ✓ Compiled in 351ms (860 modules)
+ ✓ Compiled in 304ms (914 modules)
+ GET / 200 in 110ms
+ ✓ Compiled /login in 375ms (997 modules)
+ ✓ Compiled /dashboard in 193ms (994 modules)
+ ✓ Compiled /_not-found in 445ms (1897 modules)
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 566ms
+ ✓ Compiled in 534ms (1886 modules)
+ ✓ Compiled in 164ms (914 modules)
+ ✓ Compiled in 143ms (1886 modules)
+ ✓ Compiled in 143ms (914 modules)
+ ✓ Compiled in 167ms (1886 modules)
+ ✓ Compiled in 165ms (914 modules)
+ ✓ Compiled in 139ms (1886 modules)
+ ✓ Compiled in 296ms (1900 modules)
+ ✓ Compiled in 168ms (914 modules)
+ ✓ Compiled in 149ms (1886 modules)
+ ✓ Compiled in 463ms (1886 modules)
+ ✓ Compiled in 164ms (914 modules)
+ ✓ Compiled in 137ms (1886 modules)
+ ✓ Compiled in 142ms (914 modules)
+ ✓ Compiled in 167ms (1886 modules)
+ ✓ Compiled in 196ms (914 modules)
+ GET / 200 in 100ms
+ ✓ Compiled /terms in 346ms (1889 modules)
+ ✓ Compiled /privacy in 214ms (1844 modules)
+ ✓ Compiled /blog in 145ms (1846 modules)
+ ✓ Compiled /about in 167ms (1319 modules)
+ ✓ Compiled /support in 177ms (1178 modules)
+ ✓ Compiled /docs in 127ms (1180 modules)
+ GET /docs 200 in 210ms
+ GET /support 200 in 50ms
+ ✓ Compiled /guides in 131ms (1184 modules)
+ ✓ Compiled /api-reference in 135ms (1185 modules)
+ ✓ Compiled /demo in 344ms (820 modules)
+ ✓ Compiled /login in 202ms (955 modules)
+ ✓ Compiled /dashboard in 110ms (979 modules)
+ GET /login 200 in 113ms
+ GET /login 200 in 42ms
+ GET / 200 in 49ms
+ ✓ Compiled /_not-found in 373ms (1878 modules)
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 447ms
+ ✓ Compiled in 506ms (1857 modules)
+ GET / 200 in 61ms
+ GET /login 200 in 70ms
+ ✓ Compiled /_not-found in 193ms (1846 modules)
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 283ms
+ ✓ Compiled /dashboard in 106ms (976 modules)
+ ✓ Compiled in 746ms (1857 modules)
+ ✓ Compiled in 184ms (914 modules)
+ ✓ Compiled in 209ms (914 modules)
+ ✓ Compiled in 259ms (1857 modules)
+ GET /login 200 in 102ms
+ ✓ Compiled /_not-found in 284ms (1846 modules)
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 352ms
+ ✓ Compiled /dashboard in 156ms (976 modules)
+ ✓ Compiled /dashboard/apps in 290ms (983 modules)
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 29ms
+ ✓ Compiled in 420ms (914 modules)
+ ✓ Compiled in 267ms (914 modules)
+ ✓ Compiled in 539ms (1885 modules)
+ ✓ Compiled in 172ms (914 modules)
+ ✓ Compiled in 186ms (914 modules)
+ ✓ Compiled in 160ms (914 modules)
+ ✓ Compiled in 149ms (914 modules)
+ ✓ Compiled in 238ms (914 modules)
+ ✓ Compiled in 183ms (914 modules)
+ ✓ Compiled in 172ms (914 modules)
+ ✓ Compiled in 156ms (914 modules)
+ ✓ Compiled in 234ms (914 modules)
+ ✓ Compiled in 364ms (914 modules)
+ ✓ Compiled in 176ms (914 modules)
+ ✓ Compiled in 371ms (914 modules)
+ GET /login 200 in 77ms
+ ✓ Compiled /dashboard/apps in 168ms (982 modules)
+ ✓ Compiled /dashboard/datasources in 474ms (1896 modules)
+ ✓ Compiled /dashboard/analytics in 321ms (1910 modules)
+ ✓ Compiled /dashboard/team in 208ms (1930 modules)
+ ✓ Compiled /dashboard/billing in 291ms (1944 modules)
+ ✓ Compiled /dashboard/apps/[id] in 268ms (1029 modules)
+ ✓ Compiled /dashboard/apps/[id]/builder in 378ms (1983 modules)
+ ✓ Compiled /dashboard/apps/[id]/edit in 392ms (1993 modules)
+ GET /login 200 in 96ms

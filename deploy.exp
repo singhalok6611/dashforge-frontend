@@ -1,0 +1,18 @@
+#!/usr/bin/expect -f
+
+set timeout 60
+
+# Add new service
+spawn railway add
+expect "Select a service to add"
+send "Empty Service\r"
+expect eof
+
+# Wait a moment for service creation
+sleep 2
+
+# Get the newly created service and deploy
+spawn railway up
+expect "Select a service"
+send "frontend\r"
+expect eof

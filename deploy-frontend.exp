@@ -1,0 +1,42 @@
+#!/usr/bin/expect -f
+
+set timeout 120
+
+# Step 1: Add new empty service
+spawn railway add
+expect {
+    "What do you need?" {
+        send "\r"
+        expect {
+            "Enter a service name" {
+                send "frontend\r"
+                expect eof
+            }
+        }
+    }
+}
+
+sleep 3
+
+# Step 2: Link to the frontend service
+spawn railway service
+expect {
+    "Select a service" {
+        send "frontend\r"
+        expect eof
+    }
+}
+
+sleep 2
+
+# Step 3: Set environment variable
+spawn railway variables --set NEXT_PUBLIC_API_URL=https://backend-production-8bb8.up.railway.app/api
+expect eof
+
+sleep 2
+
+# Step 4: Deploy
+spawn railway up
+expect eof
+
+puts "\n✅ Frontend deployment initiated!"

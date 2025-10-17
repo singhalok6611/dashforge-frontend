@@ -163,7 +163,7 @@ export default function DataSourcesPage() {
                 Connect and manage your database connections
               </p>
             </div>
-            {canCreateDataSource(userRole) && (
+            {canCreateDataSource(userRole ?? undefined) && (
               <Button variant="primary" onClick={() => setShowNewForm(!showNewForm)}>
                 <Plus className="w-4 h-4 mr-2" />
                 Add Data Source
@@ -358,7 +358,7 @@ export default function DataSourcesPage() {
                     : 'No data sources have been configured yet'
                   }
                 </p>
-                {canCreateDataSource(userRole) && (
+                {canCreateDataSource(userRole ?? undefined) && (
                   <Button variant="primary" onClick={() => setShowNewForm(true)}>
                     <Plus className="w-4 h-4 mr-2" />
                     Add Data Source

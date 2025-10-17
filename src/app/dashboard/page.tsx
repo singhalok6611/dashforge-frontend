@@ -140,8 +140,8 @@ export default function DashboardHome() {
                   <Database className="w-6 h-6 text-green-600" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900">{canCreateDataSource(userRole) ? 'Connect Database' : 'View Data Sources'}</h3>
-                  <p className="text-sm text-gray-600">{canCreateDataSource(userRole) ? 'Add a new data source' : 'Browse available data sources'}</p>
+                  <h3 className="font-semibold text-gray-900">{canCreateDataSource(userRole ?? undefined) ? 'Connect Database' : 'View Data Sources'}</h3>
+                  <p className="text-sm text-gray-600">{canCreateDataSource(userRole ?? undefined) ? 'Add a new data source' : 'Browse available data sources'}</p>
                 </div>
               </div>
             </CardContent>

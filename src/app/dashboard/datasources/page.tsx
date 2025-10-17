@@ -353,7 +353,7 @@ export default function DataSourcesPage() {
                   No data sources yet
                 </h3>
                 <p className="text-gray-600 mb-6">
-                  {canCreateDataSource(userRole)
+                  {canCreateDataSource(userRole ?? undefined)
                     ? 'Connect your first database to start building applications'
                     : 'No data sources have been configured yet'
                   }

@@ -130,7 +130,7 @@ export default function AppsPage() {
                 Manage and organize all your applications
               </p>
             </div>
-            {userRole && canCreateApp(userRole) && (
+            {userRole && canCreateApp(userRole ?? undefined) && (
               <Link href="/dashboard/apps/new">
                 <Button variant="primary">
                   <Plus className="w-4 h-4 mr-2" />
@@ -192,12 +192,12 @@ export default function AppsPage() {
                 <p className="text-gray-600 mb-6">
                   {searchQuery
                     ? 'Try adjusting your search terms'
-                    : userRole && canCreateApp(userRole)
+                    : userRole && canCreateApp(userRole ?? undefined)
                     ? 'Create your first app to start building powerful dashboards'
                     : 'No apps have been created yet'
                   }
                 </p>
-                {!searchQuery && userRole && canCreateApp(userRole) && (
+                {!searchQuery && userRole && canCreateApp(userRole ?? undefined) && (
                   <Link href="/dashboard/apps/new">
                     <Button variant="primary">
                       <Plus className="w-4 h-4 mr-2" />

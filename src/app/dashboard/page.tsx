@@ -113,8 +113,8 @@ export default function DashboardHome() {
       </div>
 
       {/* Quick Actions */}
-      <div className={`grid grid-cols-1 ${canCreateApp(userRole) || canManageTeam(userRole) ? 'md:grid-cols-3' : 'md:grid-cols-2'} gap-6 mb-8`}>
-        {canCreateApp(userRole) && (
+      <div className={`grid grid-cols-1 ${canCreateApp(userRole ?? undefined) || canManageTeam(userRole ?? undefined) ? 'md:grid-cols-3' : 'md:grid-cols-2'} gap-6 mb-8`}>
+        {canCreateApp(userRole ?? undefined) && (
           <Link href="/dashboard/apps/new">
             <Card className="cursor-pointer hover:shadow-md transition-shadow">
               <CardContent className="pt-6">
@@ -148,7 +148,7 @@ export default function DashboardHome() {
           </Card>
         </Link>
 
-        {canManageTeam(userRole) && (
+        {canManageTeam(userRole ?? undefined) && (
           <Link href="/dashboard/team">
             <Card className="cursor-pointer hover:shadow-md transition-shadow">
               <CardContent className="pt-6">
@@ -220,12 +220,12 @@ export default function DashboardHome() {
               <CardDescription>
                 {stats.recentApps.length > 0
                   ? 'Your recently updated apps'
-                  : canCreateApp(userRole)
+                  : canCreateApp(userRole ?? undefined)
                   ? 'Get started by creating your first app'
                   : 'View all available apps'}
               </CardDescription>
             </div>
-            {canCreateApp(userRole) && (
+            {canCreateApp(userRole ?? undefined) && (
               <Link href="/dashboard/apps/new">
                 <Button variant="primary">
                   <Plus className="w-4 h-4 mr-2" />
@@ -243,11 +243,11 @@ export default function DashboardHome() {
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">No apps yet</h3>
               <p className="text-gray-600 mb-6">
-                {canCreateApp(userRole)
+                {canCreateApp(userRole ?? undefined)
                   ? 'Create your first app to start building powerful dashboards'
                   : 'No apps have been created yet. Contact your administrator to create apps.'}
               </p>
-              {canCreateApp(userRole) && (
+              {canCreateApp(userRole ?? undefined) && (
                 <Link href="/dashboard/apps/new">
                   <Button variant="primary">
                     <Plus className="w-4 h-4 mr-2" />

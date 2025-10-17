@@ -427,12 +427,12 @@ export default function DataSourcesPage() {
                         <TestTube className="w-4 h-4 mr-2" />
                         Test
                       </Button>
-                      {canEditDataSource(userRole) && (
+                      {canEditDataSource(userRole ?? undefined) && (
                         <Button variant="outline" size="md">
                           <Edit className="w-4 h-4" />
                         </Button>
                       )}
-                      {canDeleteDataSource(userRole) && (
+                      {canDeleteDataSource(userRole ?? undefined) && (
                         <Button
                           variant="outline"
                           size="md"

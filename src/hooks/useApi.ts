@@ -3,7 +3,22 @@
  */
 
 import { useState, useEffect, useCallback } from 'react';
-import { api, APIError, ApiResponse } from '@/lib/api';
+import api from '@/lib/api';
+
+// Type definitions
+export class APIError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = 'APIError';
+  }
+}
+
+export interface ApiResponse<T = any> {
+  success: boolean;
+  data?: T;
+  error?: string;
+  message?: string;
+}
 
 interface UseApiState<T> {
   data: T | null;
@@ -35,17 +50,18 @@ export function useApi<T>(
 
     try {
       const response = await api.get<ApiResponse<T>>(endpoint);
+      const apiResponse = response.data;
 
-      if (response.success && response.data) {
-        setData(response.data);
-        options?.onSuccess?.(response.data);
+      if (apiResponse.success && apiResponse.data) {
+        setData(apiResponse.data);
+        options?.onSuccess?.(apiResponse.data);
       } else {
-        const errorMsg = response.error || 'Failed to fetch data';
+        const errorMsg = apiResponse.error || 'Failed to fetch data';
         setError(errorMsg);
         options?.onError?.(errorMsg);
       }
     } catch (err) {
-      const errorMsg = err instanceof APIError ? err.message : 'An error occurred';
+      const errorMsg = err instanceof Error ? err.message : 'An error occurred';
       setError(errorMsg);
       options?.onError?.(errorMsg);
     } finally {
@@ -89,22 +105,24 @@ export function useMutation<T>(
       setError(null);
 
       try {
-        let response: ApiResponse<T>;
+        let axiosResponse;
 
         switch (method) {
           case 'POST':
-            response = await api.post<ApiResponse<T>>(endpoint, payload);
+            axiosResponse = await api.post<ApiResponse<T>>(endpoint, payload);
             break;
           case 'PUT':
-            response = await api.put<ApiResponse<T>>(endpoint, payload);
+            axiosResponse = await api.put<ApiResponse<T>>(endpoint, payload);
             break;
           case 'PATCH':
-            response = await api.patch<ApiResponse<T>>(endpoint, payload);
+            axiosResponse = await api.patch<ApiResponse<T>>(endpoint, payload);
             break;
           case 'DELETE':
-            response = await api.delete<ApiResponse<T>>(endpoint);
+            axiosResponse = await api.delete<ApiResponse<T>>(endpoint);
             break;
         }
+
+        const response = axiosResponse.data;
 
         if (response.success && response.data) {
           setData(response.data);
@@ -117,7 +135,7 @@ export function useMutation<T>(
           return null;
         }
       } catch (err) {
-        const errorMsg = err instanceof APIError ? err.message : 'An error occurred';
+        const errorMsg = err instanceof Error ? err.message : 'An error occurred';
         setError(errorMsg);
         options?.onError?.(errorMsg);
         return null;

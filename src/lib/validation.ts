@@ -3,7 +3,7 @@
  */
 
 export interface ValidationRule {
-  validate: (value: any) => boolean;
+  validate: (value: any, formData?: Record<string, any>) => boolean;
   message: string;
 }
 

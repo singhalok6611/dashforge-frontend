@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import Script from 'next/script';
@@ -303,7 +303,9 @@ export default function PaymentPage() {
         src="https://checkout.razorpay.com/v1/checkout.js"
         strategy="lazyOnload"
       />
-      <PaymentPageContent />
+      <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="text-gray-600">Loading...</div></div>}>
+        <PaymentPageContent />
+      </Suspense>
     </ToastProvider>
   );
 }
